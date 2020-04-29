@@ -16,13 +16,17 @@ After the user generates a playlist using the playlist generator, they will be t
 ## Packages required:
 
 Flask
+
     Flask, redirect, request, url_for, render_template, session
 
 Requests
+
     requests
 
 Plotly
+
     plotly.graph_objs
 
 Sqlite
+
     sqlite3
