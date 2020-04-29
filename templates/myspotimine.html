@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+    <title>My Spotimine</title>
+</head>
+
+<body>
+  <header>
+    <div class = "logo_container">
+      <img src = "{{url_for('static', filename = 'imgs/big_icon.png')}}" class = "spotimine_header_logo">
+      <span class = "spotimine_header_text">Spotimine</span>
+    </div>
+      
+    <nav class = "nav">
+      <a href = "/">Home</a>
+      <a href = "/myspotimine">My Spotimine</a>
+    </nav>
+  </header>
+  
+  <main id = "myspotimine_content">
+    <div class = "welcome_section">
+      <h1>
+        Welcome to Spotimine!
+    </h1>
+      <p>Spotimine imports your music library directly from Spotify to provide give you information about your library and to help generate playlists tailored to your preferences.</p>
+      <p>To view histograms of your library's traits like danceability, popularity of songs, or tempo, visit the library analytics section.</p>
+      <a href = "#library_analyzer" class = "try_it_link">Go to library analyzer<span class = "try_it_arrow">&#10140;</span></a>
+      <p>To create custom playlists comprised of songs from your library based on library traits, visit the playlist generator section. You can even import generated playlists directly to spotify! Note, the playlist generator does not support filtering by artist or genre. Also, the accuracy of the playlist generator is partially dependent on the size of your library, so the larger the library the better!</p>
+      <a href = "#playlist_generator" class = "try_it_link">Go to playlist generator<span class = "try_it_arrow">&#10140;</span></a>
+    </div>
+    
+    <h2 class = "myspotimine_heading" id = "library_analyzer">Library Analytics</h2>
+    <form action="/plot" method="POST" id = "graph_form">
+      What would you like to graph?
+      <div class = "custom_select">
+        <select name="graph_criteria">
+          <option value = "popularity">Popularity</option>
+          <option value="popularity">Popularity</option>
+          <option value="key">Key</option>
+          <option value="acousticness">Acousticness</option>
+          <option value="danceability">Danceability</option>
+          <option value="energy">Energy</option>
+          <option value="instrumentalness">Instrumentalness</option>
+          <option value="liveness">Liveness</option>
+          <option value="loudness">Loudness</option>
+          <option value="speechiness">Speechiness</option>
+          <option value="valence">Valence</option>
+          <option value="tempo">Tempo</option>
+       </select>
+      </div>
+
+    <input type="submit" value="View Graph" class = "form_submit"/>
+  </form>  
+
+  <h2 class = "myspotimine_heading" id = "playlist_generator">Playlist Generator</h2>
+    <form action="/generate_playlist" method="POST" id = "playlist_generator_form">
+        <div id = "playlist_name_container">
+            <label for = "playlistName" >Enter a name for your playlist to get started</label>
+            <input type = "text" id = "playlistName" name = "playlistName" required placeholder="My new playlist">
+        </div>
+      <div class = "range-wrap">
+          What tempo would you like your playlist? (bpm)
+          <input type ="range", min = "50" max = "200" step = "1" class = "slider" id = "tempoRange" name = "tempoRange">
+          <output class ="bubble"></output>
+      </div>
+
+      <div class = "checkbox_wrap">
+        <label class = "checkbox_label">
+          <input type = "checkbox" name = "ignore_tempo"> Ignore Tempo
+          <span class = "checkbox_custom"></span>
+        </label>
+      </div>
+      
+      <div class = "range-wrap">
+          How negative/positive would you like your playlist? (0 = very negative, 1 = very positive)
+          <input type ="range", min = "0" max = "1" step = "0.01" class = "slider" id = "valenceRange" name = "valenceRange">
+          <output class ="bubble"></output>
+      </div>
+
+      <div class = "checkbox_wrap">
+        <label class = "checkbox_label">
+          <input type = "checkbox" name = "ignore_valence"> Ignore Mood
+          <span class = "checkbox_custom"></span>
+        </label>
+      </div>
+
+      <div class = "range-wrap">
+        How energetic would you like your playlist? (0 = not energetic, 1 = very energetic)
+        <input type ="range", min = "0" max = "1" step = "0.01" class = "slider" id = "energyRange" name = "energyRange">
+        <output class ="bubble"></output>
+    </div>
+
+    <div class = "checkbox_wrap">
+      <label class = "checkbox_label">
+        <input type = "checkbox" name = "ignore_energy"> Ignore Energy
+        <span class = "checkbox_custom"></span>
+      </label>
+    </div>
+
+      <div class = "range-wrap">
+        How danceable do you want your playlist to be? (0 = not danceable, 1 = very danceable)
+        <input type ="range", min = "0" max = "1" class = "slider" step = "0.01" id = "danceabilityRange" name = "danceabilityRange">
+        <output class ="bubble"></output>
+      </div>
+
+    <div class = "checkbox_wrap">
+      <label class = "checkbox_label">
+        <input type = "checkbox" name = "ignore_danceability"> Ignore Danceability
+        <span class = "checkbox_custom"></span>
+      </label>
+    </div>
+      
+      <div class = "range-wrap">
+        How long do you want the playlist to be? (minutes)
+        <input type ="range", min = "5" max = "180" step = "1" class = "slider" id = "playlistMinutesRange" name = "playlistMinutesRange">
+        <output class ="bubble"></output>
+      </div>
+  
+      <input type="submit" value="Generate Playlist" class = "form_submit"/>
+    </form>
+  </main>
+    <footer>
+      <a href = "https://github.com/Drew-Pappas/spotimine" target = "_blank" id = "view_source_code">View the source code</a>
+      <div class = "creator_container">
+        <span>Made by Drew Pappas</span>
+        <span class = "divider">|</span>
+        <a href = "https://drew-pappas.github.io/portfolio/">Portfolio</a>
+        <span class = "divider">|</span>
+        <a href = "https://www.linkedin.com/in/drew-pappas/" target = "_blank">LinkedIn</a> 
+        <span class = "divider">|</span>
+        <a href = "https://github.com/Drew-Pappas">GitHub</a>
+      </div>
+      
+    </footer>  
+  </body>
+
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</html>

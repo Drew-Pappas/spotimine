@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <title>My Spotimine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+
+</head>
+
+<body>
+    <header>
+        
+    </header>
+    <main class = "homepage_content">
+        <h1 id = "homepage_header">
+            Spotimine
+        </h1>
+        <img src = "{{url_for('static', filename = 'imgs/big_icon.png')}}" id = "homepage_big_img">
+        
+        <p id = "homepage_brief_description">Make playlists you'll love with a few simple clicks</p>
+        <a href = "/login" id = "get_started">Get Started</a>
+
+    </main>
+    
+    <footer>
+        <a href = "https://github.com/Drew-Pappas/spotimine" target = "_blank" id = "view_source_code">View the source code</a>
+        <div class = "creator_container">
+        <span>Made by Drew Pappas</span>
+        <span class = "divider">|</span>
+        <a href = "https://drew-pappas.github.io/portfolio/">Portfolio</a>
+        <span class = "divider">|</span>
+        <a href = "https://www.linkedin.com/in/drew-pappas/" target = "_blank">LinkedIn</a> 
+        <span class = "divider">|</span>
+        <a href = "https://github.com/Drew-Pappas">GitHub</a>
+      </div>
+        
+    </footer>
+  </body>
+</html>

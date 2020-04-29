@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+    <title>My Spotimine</title>
+</head>
+
+<body>
+    <header>
+        <div class = "logo_container">
+            <img src = "{{url_for('static', filename = 'imgs/big_icon.png')}}" class = "spotimine_header_logo">
+            <span class = "spotimine_header_text">Spotimine</span>
+          </div>
+            
+    </header>
+    <main class = "error_content">
+        <h1>
+            Oops looks like an error occurred. 
+        </h1>
+        <p>Starting from the beginning will fix most errors</p>
+        <a href = "/login">Try Again</a>
+
+    </main>
+    
+    <footer>
+        
+    </footer>
+  </body>
+</html>

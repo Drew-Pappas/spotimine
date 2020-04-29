@@ -1,0 +1,476 @@
+* {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+header, footer{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#view_source_code {
+  margin-left: 4vw;
+}
+
+.creator_container{
+  margin-right: 4vw;
+}
+
+#view_source_code, .creator_container a, .creator_container span {
+  color: #1DB954;
+}
+
+#view_source_code:hover, .creator_container a:hover {
+  color: white;
+}
+.nav {
+  margin: 0 3vw;
+}
+
+.nav a{
+  color: #1DB954;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: 2.5vw;
+}
+
+.nav a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+body {
+  background-color: white;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.spotimine_header_text {
+  color: #1DB954;
+  font-size: 3rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.spotimine_header_logo {
+  width: 3vw;
+  min-width: 40px;
+  display: inline-block;
+  margin: 0 1vw;
+}
+
+.homepage_content{
+  height: 85vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#homepage_header, #homepage_brief_description, #get_started {
+  font-weight: 700;
+  display: inline-block;
+}
+
+#homepage_header {
+  font-size: 5rem;
+}
+
+#homepage_big_img {
+  width: 15%;
+  min-width: 150px;
+}
+
+#homepage_brief_description {
+  font-size: 2rem;
+}
+
+#get_started, .form_submit, #view_playlist, .error_content a{
+  font-size: 1.5rem;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #1DB954;
+  color: white;
+  /* border: 2px solid black; */
+}
+
+#get_started:hover {
+  color: black;
+}
+
+.welcome_section {
+  width: 40vw;
+  margin: 0 auto;
+  margin-top: 4vh;
+  background-color: black;
+  min-height: 60vh;
+  padding: 5vh 5vw;
+}
+
+.welcome_section h1 {
+  color: #1DB954;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+
+.welcome_section p {
+  color: white;
+  margin: 2vh 0;
+  
+}
+
+.try_it_link {
+  color: white;
+  background-color: #1DB954;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 2vh 0;
+  display: inline-block;
+  position: relative;
+  right: 0;
+  margin-left: 2vw;
+}
+
+.try_it_arrow {
+  color: white;
+  margin-left: 1vw;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  vertical-align: middle;
+}
+
+#playlist_name_container {
+  text-align: center;
+}
+
+/* CITATION */
+.range-wrap, .checkbox_wrap {
+  position: relative;
+  margin: 0 auto 3rem;
+  width: 60%
+}
+
+.slider {
+  width: 100%;
+  margin-bottom: 0.5vh;
+}
+
+.bubble {
+  background: #1DB954;
+  color: white;
+  padding: 4px 12px;
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #1DB954;
+  top: -1px;
+  left: 50%;
+}
+
+/* END CITED CODE */
+.gtitle {
+  color: black;
+}
+
+.myspotimine_heading, .generated_playlist_heading{
+  font-size: 2.5rem;
+  color: #1DB954;
+  font-weight: 700;
+  text-align: center;
+  padding: 3vh 0;
+}
+
+#myspotimine_content{
+  background-color: rgba(0,0,0,0.1);
+  padding: 5vh 0;
+}
+
+#graph_form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  margin: 0 auto;
+  padding: 5vh 0;
+  height: 50vh;
+  background-color: white;
+}
+
+
+/* CITED CODE */
+/* https://www.w3schools.com/howto/howto_custom_select.asp  */
+.custom_select {
+  position: relative;
+  width: 50%;
+  border-radius:20px;
+}
+
+.custom_select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: #1DB954;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #1DB954;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* END CITED CODE */
+
+#playlist_generator_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  margin:0 auto;
+  padding: 5vh 0;
+  background-color: white;
+}
+
+#playlistName {
+  width: 80%;
+  margin: 3vh auto;
+  margin-bottom: 5vh;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  height: 6vh;
+  border: none;
+  border-bottom: 2px solid #1DB954;
+}
+
+#playlistName:focus{
+  outline: none;
+}
+
+.checkbox_label {
+  display: inline-block;
+}
+
+.checkbox_label input {
+  opacity: 0;
+  cursor: pointer;
+  margin-right: 0.5vw;
+}
+
+.checkbox_label .checkbox_custom {
+  height: 16px;
+  width: 16px; 
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+
+.checkbox_label input:checked ~ .checkbox_custom {
+  background-color: #1DB954;
+  opacity: 1;
+}
+
+.graph_container {
+  min-width: 500px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.graph_description {
+  width: 80vw;
+  padding: 5vh 5vw;
+  margin: 0 auto 10vh;
+  background-color: black;
+  color: white;
+}
+
+.generated_playlist_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  width: 75vw;
+  min-height: 60vh;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+  margin-top: 3vh;
+  padding-bottom: 3vh;
+  color: white;
+}
+
+.generated_playlist_list_container {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 4vh;
+}
+
+.generated_playlist_heading {
+  font-size: 3rem;
+  
+}
+
+.generated_playlist_track {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2vh;
+  border-bottom: 2px solid #1DB954;
+  padding-bottom: 1vh;
+  padding-left: 0.5vw;
+}
+
+.playlist_import_success_content {
+  width: 50vw;
+  min-height: 70vh;
+  background-color: black;
+  margin: 0 auto;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playlist_import_success_content h1, .playlist_import_success_content h2 {
+  color: #1DB954;
+}
+
+.playlist_import_success_content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 2vh;
+}
+
+.playlist_import_success_content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.playlist_import_success_content p {
+  color: white;
+}
+
+.arrow {
+  margin-left: 1.5vw;
+  color: white;
+  font-size: 2rem;
+  line-height: 1rem;
+  vertical-align: middle;
+}
+
+.form_submit {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.form_submit:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.form_submit:focus {
+  outline: none;
+}
+
+.return_to_spotimine {
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #1DB954;
+  margin: 20px;
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+}
+
+.error_content {
+  width: 70vw;
+  min-height: 60vh;
+  background-color: black;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5vh 5vw;
+}
+
+.error_content h1 {
+  color: #1DB954;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error_content p {
+  color: white;
+}

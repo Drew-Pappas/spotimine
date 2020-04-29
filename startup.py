@@ -1,9 +1,12 @@
+# CODE ADAPTED FROM
+# https://github.com/vanortg/Flask-Spotify-Auth
+
 from flask_spotify_auth import getAuth, refreshAuth, getToken
 import secrets
 #Add your client ID
 CLIENT_ID = secrets.client_id
 
-#aDD YOUR CLIENT SECRET FROM SPOTIFY
+#ADD YOUR CLIENT SECRET FROM SPOTIFY
 CLIENT_SECRET = secrets.client_secret
 
 #Port and callback url can be changed or ledt to localhost:5000

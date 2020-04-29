@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/html5reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+    <title>Generated Playlist</title>
+</head>
+
+<body>
+    <header>
+        <div class = "logo_container">
+            <img src = "{{url_for('static', filename = 'imgs/big_icon.png')}}" class = "spotimine_header_logo">
+            <span class = "spotimine_header_text">Spotimine</span>
+          </div>
+            
+          <nav class = "nav">
+            <a href = "/">Home</a>
+            <a href = "/myspotimine">My Spotimine</a>
+          </nav>
+    </header>
+    <a href = "/myspotimine" class = "return_to_spotimine">Return to my spotimine</a>
+    <div class = "generated_playlist_container">
+        <h2 class = "generated_playlist_heading">{{playlist_name}}</h2>
+        <ul class = "generated_playlist_list_container">
+        {% for track in tracks %}
+            <li class = "generated_playlist_track">{{track[0]}}</li>
+        {% endfor %}
+        </ul>
+
+        <form action="/import_to_spotify" method="POST" >
+            <input type="submit" value="Import to Spotify" class = "form_submit"/>
+        </form>
+    </div>
+    
+
+    
+    
+    <footer>
+        <a href = "https://github.com/Drew-Pappas/spotimine" target = "_blank" id = "view_source_code">View the source code</a>
+        <div class = "creator_container">
+        <span>Made by Drew Pappas</span>
+        <span class = "divider">|</span>
+        <a href = "https://drew-pappas.github.io/portfolio/">Portfolio</a>
+        <span class = "divider">|</span>
+        <a href = "https://www.linkedin.com/in/drew-pappas/" target = "_blank">LinkedIn</a> 
+        <span class = "divider">|</span>
+        <a href = "https://github.com/Drew-Pappas">GitHub</a>
+      </div>
+    </footer>
+</body>
+</html>

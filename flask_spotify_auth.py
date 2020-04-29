@@ -1,3 +1,6 @@
+# CODE ADAPTED FROM
+# https://github.com/vanortg/Flask-Spotify-Auth
+
 import base64, json, requests
 
 SPOTIFY_URL_AUTH = 'https://accounts.spotify.com/authorize/?'
